@@ -41,6 +41,20 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById("navbar-container").innerHTML = data;
+                // Mejorar accesibilidad: Añadir role y aria-label a la navbar
+                const nav = document.querySelector('nav.navbar');
+                if (nav) {
+                  nav.setAttribute('role', 'navigation');
+                  nav.setAttribute('aria-label', 'Navegación principal');
+                }
+                // Mejorar accesibilidad: Añadir tabindex y aria-current a enlaces activos
+                const links = document.querySelectorAll('nav.navbar .nav-link');
+                links.forEach(link => {
+                  if (link.href && link.href.endsWith('sobremi.html')) {
+                    link.setAttribute('aria-current', 'page');
+                  }
+                  link.setAttribute('tabindex', '0');
+                });
             });
     });
 </script>
@@ -51,13 +65,13 @@
             <div class="row align-items-center">
                 <!-- Columna para la imagen a la derecha -->
                 <div class="col-md-4 mb-4" data-aos="fade-right">
-                    <img src="Multimedia/images/code.png" alt="Ayman Charoui" class="img-fluid rounded-circle" style="width: 150px; height: 150px;">
+                    <img src="Multimedia/images/code.png" alt="Retrato de Ayman Charoui, desarrollador web" class="img-fluid rounded-circle" style="width: 150px; height: 150px;" loading="lazy" decoding="async">
                 </div>
                 <!-- Columna para el contenido de texto -->
                 <div class="col-md-8 mb-4" data-aos="fade-left">
                     <header>
-                        <h1 class="text-start d-flex align-items-center">
-                            Descripcion
+                        <h1 id="intro-header" class="text-start d-flex align-items-center">
+                            Descripción
                         </h1>
                     </header>
                     <p class="text-start">
@@ -75,11 +89,11 @@
     </section>
     
     <!-- Sección de Infografía -->
-    <section class="text-center my-5">
-        <h2>Mi Infografía</h2>
-        <div style="width: 100%; height: 400px; margin-bottom: 80px;"> <!-- Reduïm l'alçada i afegim un marge inferior -->
+    <section class="text-center my-5" aria-labelledby="infografia-header">
+        <h2 id="infografia-header">Mi Infografía</h2>
+        <div style="width: 100%; height: 400px; margin-bottom: 80px;">
             <iframe
-                title="Ayman Charoui"
+                title="Infografía interactiva de Ayman Charoui"
                 frameborder="0"
                 width="1200"
                 height="675"
@@ -90,13 +104,14 @@
                 allowfullscreen="true"
                 scrolling="yes"
                 allownetworking="all"
+                aria-label="Infografía interactiva sobre el perfil de Ayman Charoui"
             ></iframe>
         </div>
     </section>
 </main>
 
 <!-- Footer fijo -->
-<footer class="text-center text-white bg-dark py-3 fixed-bottom">
+<footer class="text-center text-white bg-dark py-3 fixed-bottom" role="contentinfo">
     <p>&copy; 2024 ACE. Todos los derechos reservados.</p>
 </footer>
 
