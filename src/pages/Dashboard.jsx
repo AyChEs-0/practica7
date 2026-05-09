@@ -8,38 +8,50 @@ export default function Dashboard() {
   return (
     <div className={styles.page}>
       <nav className={styles.nav}>
-        <span className={styles.brand}>App Pràctica 7</span>
+        <span className={styles.brand}>Pràctica 7</span>
         <div className={styles.navLinks}>
-          <Link to="/dashboard" className={styles.active}>Dashboard</Link>
+          <Link to="/dashboard" className={styles.navActive}>Dashboard</Link>
           <Link to="/profile">Perfil</Link>
           <button className={styles.logoutBtn} onClick={logout}>Tancar sessió</button>
         </div>
       </nav>
 
       <main className={styles.main}>
-        <h1>Benvingut, {user.name}!</h1>
-        <p className={styles.sub}>Has iniciat sessió correctament.</p>
-
-        <div className={styles.grid}>
-          <div className={styles.card}>
-            <span className={styles.icon}>👤</span>
-            <h3>Usuari</h3>
-            <p>{user.username}</p>
-          </div>
-          <div className={styles.card}>
-            <span className={styles.icon}>🏷️</span>
-            <h3>Rol</h3>
-            <p>{user.role}</p>
-          </div>
-          <div className={styles.card}>
-            <span className={styles.icon}>📅</span>
-            <h3>Sessió</h3>
-            <p>Activa</p>
-          </div>
+        <div className={styles.welcome}>
+          <h1 className={styles.greeting}>Benvingut, {user.name}</h1>
+          <p className={styles.greetingSub}>
+            Has iniciat sessió correctament. Pots explorar el teu perfil o tancar la sessió.
+          </p>
         </div>
 
-        <Link to="/profile" className={styles.profileLink}>
-          Veure el meu perfil →
+        <section className={styles.infoSection}>
+          <p className={styles.sectionLabel}>Informació de sessió</p>
+          <div className={styles.infoList}>
+            <div className={styles.infoRow}>
+              <span className={styles.infoKey}>Nom d'usuari</span>
+              <span className={styles.infoValue}>{user.username}</span>
+            </div>
+            <div className={styles.infoRow}>
+              <span className={styles.infoKey}>Nom complet</span>
+              <span className={styles.infoValue}>{user.name}</span>
+            </div>
+            <div className={styles.infoRow}>
+              <span className={styles.infoKey}>Rol</span>
+              <span className={styles.infoValue}>
+                <span className={styles.badge}>{user.role}</span>
+              </span>
+            </div>
+            <div className={styles.infoRow}>
+              <span className={styles.infoKey}>Estat</span>
+              <span className={styles.infoValue}>
+                <span className={styles.statusDot}>Actiu</span>
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <Link to="/profile" className={styles.cta}>
+          Veure el perfil complet →
         </Link>
       </main>
     </div>

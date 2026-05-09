@@ -21,48 +21,60 @@ export default function Login() {
     if (ok) {
       navigate('/dashboard', { replace: true })
     } else {
-      setError('Usuari o contrasenya incorrectes')
+      setError('Usuari o contrasenya incorrectes. Torna-ho a intentar.')
     }
   }
 
   return (
     <div className={styles.wrapper}>
-      <form className={styles.card} onSubmit={handleSubmit}>
+      <div className={styles.brand}>
+        <p className={styles.brandTitle}>Autenticació amb React Context</p>
+        <p className={styles.brandSub}>
+          Pràctica 7 — Rutes protegides i gestió d'estat global d'usuari.
+        </p>
+      </div>
+
+      <div className={styles.formSide}>
+        <p className={styles.eyebrow}>Pràctica 7</p>
         <h1 className={styles.title}>Iniciar sessió</h1>
 
-        <label className={styles.label}>
-          Usuari
-          <input
-            className={styles.input}
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="admin / usuari"
-            autoFocus
-          />
-        </label>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="username">Usuari</label>
+            <input
+              id="username"
+              className={styles.input}
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="admin o usuari"
+              autoFocus
+              autoComplete="username"
+            />
+          </div>
 
-        <label className={styles.label}>
-          Contrasenya
-          <input
-            className={styles.input}
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="••••"
-          />
-        </label>
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="password">Contrasenya</label>
+            <input
+              id="password"
+              className={styles.input}
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="••••••"
+              autoComplete="current-password"
+            />
+          </div>
 
-        {error && <p className={styles.error}>{error}</p>}
+          {error && <p className={styles.error} role="alert">{error}</p>}
 
-        <button className={styles.btn} type="submit">
-          Entrar
-        </button>
+          <button className={styles.btn} type="submit">Entrar</button>
+        </form>
 
         <p className={styles.hint}>
-          Credencials: <code>admin / 1234</code> o <code>usuari / abcd</code>
+          Credencials de prova: <code>admin / 1234</code> o <code>usuari / abcd</code>
         </p>
-      </form>
+      </div>
     </div>
   )
 }

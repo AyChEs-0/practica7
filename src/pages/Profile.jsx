@@ -8,47 +8,48 @@ export default function Profile() {
   return (
     <div className={styles.page}>
       <nav className={styles.nav}>
-        <span className={styles.brand}>App Pràctica 7</span>
+        <span className={styles.brand}>Pràctica 7</span>
         <div className={styles.navLinks}>
           <Link to="/dashboard">Dashboard</Link>
-          <Link to="/profile" className={styles.active}>Perfil</Link>
+          <Link to="/profile" className={styles.navActive}>Perfil</Link>
           <button className={styles.logoutBtn} onClick={logout}>Tancar sessió</button>
         </div>
       </nav>
 
       <main className={styles.main}>
-        <div className={styles.card}>
+        <div className={styles.header}>
           <div className={styles.avatar}>
             {user.name.charAt(0).toUpperCase()}
           </div>
-          <h1 className={styles.name}>{user.name}</h1>
-          <span className={styles.badge}>{user.role}</span>
-
-          <table className={styles.table}>
-            <tbody>
-              <tr>
-                <th>Nom d'usuari</th>
-                <td>{user.username}</td>
-              </tr>
-              <tr>
-                <th>Nom complet</th>
-                <td>{user.name}</td>
-              </tr>
-              <tr>
-                <th>Rol</th>
-                <td>{user.role}</td>
-              </tr>
-              <tr>
-                <th>Estat</th>
-                <td><span className={styles.active2}>Actiu</span></td>
-              </tr>
-            </tbody>
-          </table>
-
-          <Link to="/dashboard" className={styles.backLink}>
-            ← Tornar al dashboard
-          </Link>
+          <div className={styles.headerText}>
+            <h1 className={styles.name}>{user.name}</h1>
+            <span className={styles.roleBadge}>{user.role}</span>
+          </div>
         </div>
+
+        <p className={styles.sectionLabel}>Dades del compte</p>
+        <div className={styles.fieldList}>
+          <div className={styles.fieldRow}>
+            <span className={styles.fieldKey}>Nom d'usuari</span>
+            <span className={styles.fieldValue}>{user.username}</span>
+          </div>
+          <div className={styles.fieldRow}>
+            <span className={styles.fieldKey}>Nom complet</span>
+            <span className={styles.fieldValue}>{user.name}</span>
+          </div>
+          <div className={styles.fieldRow}>
+            <span className={styles.fieldKey}>Rol</span>
+            <span className={styles.fieldValue}>{user.role}</span>
+          </div>
+          <div className={styles.fieldRow}>
+            <span className={styles.fieldKey}>Estat</span>
+            <span className={styles.fieldValue}>
+              <span className={styles.statusDot}>Actiu</span>
+            </span>
+          </div>
+        </div>
+
+        <Link to="/dashboard" className={styles.back}>← Tornar al dashboard</Link>
       </main>
     </div>
   )
