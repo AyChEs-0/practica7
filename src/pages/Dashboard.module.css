@@ -1,0 +1,116 @@
+.page {
+  min-height: 100vh;
+  background: #f0f2f5;
+}
+
+.nav {
+  background: #1a1a2e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 56px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #a5b4fc;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navLinks a {
+  color: #c7d2fe;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.navLinks a:hover,
+.active {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.logoutBtn {
+  background: transparent;
+  border: 1.5px solid #6366f1;
+  color: #a5b4fc;
+  padding: 0.3rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.logoutBtn:hover {
+  background: #6366f1;
+  color: #fff;
+}
+
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.main h1 {
+  font-size: 2rem;
+  color: #1a1a2e;
+  margin: 0 0 0.4rem;
+}
+
+.sub {
+  color: #666;
+  margin: 0 0 2.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.card h3 {
+  margin: 0.5rem 0 0.3rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.profileLink {
+  display: inline-block;
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.profileLink:hover {
+  text-decoration: underline;
+}

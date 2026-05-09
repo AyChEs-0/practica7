@@ -1,0 +1,145 @@
+.page {
+  min-height: 100vh;
+  background: #f0f2f5;
+}
+
+.nav {
+  background: #1a1a2e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 56px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #a5b4fc;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navLinks a {
+  color: #c7d2fe;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.navLinks a:hover,
+.active {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.logoutBtn {
+  background: transparent;
+  border: 1.5px solid #6366f1;
+  color: #a5b4fc;
+  padding: 0.3rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.logoutBtn:hover {
+  background: #6366f1;
+  color: #fff;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #4f46e5;
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #1a1a2e;
+}
+
+.badge {
+  background: #ede9fe;
+  color: #4f46e5;
+  padding: 0.2rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+.table th,
+.table td {
+  padding: 0.7rem 0.5rem;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.table th {
+  color: #888;
+  font-weight: 500;
+  width: 45%;
+}
+
+.table td {
+  color: #1a1a2e;
+  font-weight: 600;
+}
+
+.active2 {
+  background: #dcfce7;
+  color: #16a34a;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+}
+
+.backLink {
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
